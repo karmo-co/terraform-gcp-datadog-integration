@@ -1,3 +1,9 @@
+variable "datadog_api_key" {
+  type        = string
+  description = "Datadog API Key for integration."
+  sensitive   = true
+}
+
 module "datadog-integration" {
   source                    = "./gcp-datadog-module"
   project_id                = "opstables"
