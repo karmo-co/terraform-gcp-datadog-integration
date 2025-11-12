@@ -13,7 +13,7 @@ module "datadog-integration" {
   subscription_name         = "datadog-export-sub"
   vpc_name                  = "default"
   subnet_name               = "default"
-  subnet_region             = "ap-australia-1"
+  subnet_region             = "australia-southeast1"
   datadog_api_key           = var.datadog_api_key
   datadog_site_url          = "https://http-intake.logs.ap2.datadoghq.com"
 }
