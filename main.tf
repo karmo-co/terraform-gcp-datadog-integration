@@ -1,17 +1,13 @@
-
 module "datadog-integration" {
   source                    = "./gcp-datadog-module"
-  project_id                = ""
-  dataflow_job_name         = ""
-  dataflow_temp_bucket_name = ""
+  project_id                = "opstables"
+  dataflow_job_name         = "dfj-push-logs-to-datadog"
+  dataflow_temp_bucket_name = "bkt-push-logs-to-datadog-temp"
   topic_name                = "datadog-export-topic"
   subscription_name         = "datadog-export-sub"
-  vpc_name                  = ""
-  subnet_name               = ""
-  subnet_region             = ""   # Specify the region of your existing subnet.
-  datadog_api_key           = ""
-  datadog_site_url          = ""
-  log_sink_in_folder        = true
-  folder_id                 = ""
-  inclusion_filter          = ""
+  vpc_name                  = "default"
+  subnet_name               = "default"
+  subnet_region             = "ap-australia-1"
+  datadog_api_key           = var.datadog_api_key
+  datadog_site_url          = "https://http-intake.logs.ap2.datadoghq.com"
 }
